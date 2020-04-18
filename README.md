@@ -1,2 +1,3 @@
-# Nuxt-Typescript-Drag-Resize
-Created with CodeSandbox
+# Nuxt with TypeScript example
+
+https://codesandbox.io/s/0qmykr7wq0
