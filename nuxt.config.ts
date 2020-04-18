@@ -6,7 +6,20 @@ const config: Configuration = {
     devtools: true
   },
   mode: 'universal',
-  modules: ['@nuxt/typescript-build', 'nuxt-fontawesome'],
+  modules: [
+    '@nuxt/typescript-build',
+    [
+      'nuxt-fontawesome',
+      {
+        imports: [
+          {
+            set: '@fortawesome/free-solid-svg-icons',
+            icons: ['fas']
+          }
+        ]
+      }
+    ]
+  ],
   typescript: {
     typeCheck: true
   }

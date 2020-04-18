@@ -96,7 +96,9 @@ export default {
         this.$emit("setPosition", { id: this.id, x: newX, y: newY });
     },
     resize: function(event) {
-      if (!event.clientX || !event.clientY) return;
+      if (event.clientX <= 0 || event.clientY <= 0) return;
+
+      // console.log(event.clientX, event.clientY);
 
       this.mx = event.clientX;
       this.my = event.clientY;
@@ -122,7 +124,7 @@ export default {
       var img = document.createElement("img");
       img.src =
         "data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=";
-      if (this.type == 1) event.dataTransfer.setDragImage(img, 0, 0);
+      if (this.type !== 0) event.dataTransfer.setDragImage(img, 0, 0);
 
       const mx = event.clientX;
       const my = event.clientY;
